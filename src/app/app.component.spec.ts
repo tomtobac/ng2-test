@@ -58,4 +58,10 @@ describe('AppComponent', () => {
   })
 
 
+  it('should return an error if the number is not between 0 and 100', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const buzzFizz = fixture.componentInstance.buzzFizz;
+    expect(() => buzzFizz(101)).toThrowError('Number must be between 0 and 100')
+  })
+
 });
