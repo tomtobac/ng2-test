@@ -29,4 +29,33 @@ describe('AppComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain('app works!');
   }));
+
+
+  // BuzzFizz
+
+  it('should return empty string', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const buzzFizz = fixture.componentInstance.buzzFizz;
+    expect(buzzFizz(1)).toEqual('')
+  })
+
+  it('should return Buzz if the number module 3 is 0', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const buzzFizz = fixture.componentInstance.buzzFizz;
+    expect(buzzFizz(3)).toEqual('Buzz')
+  })
+
+  it('should return Fizz if the number module 5 is 0', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const buzzFizz = fixture.componentInstance.buzzFizz;
+    expect(buzzFizz(5)).toEqual('Fizz')
+  })
+
+  it('should return BuzzFizz if the number module 3 & 5 is 0', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const buzzFizz = fixture.componentInstance.buzzFizz;
+    expect(buzzFizz(15)).toEqual('BuzzFizz')
+  })
+
+
 });
